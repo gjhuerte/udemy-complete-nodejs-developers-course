@@ -6,8 +6,10 @@ const notes = require('./notes.js');
 
 // var user = os.userInfo();
 
-var res = notes.addNote();
-console.log(res);
+// var res = notes.addNote();   
+// console.log(res);
+
+console.log('Result:', notes.add(7,-2));
 
 // option 1
 // fs.appendFileSync('greetings.txt', 'Hello world!');
