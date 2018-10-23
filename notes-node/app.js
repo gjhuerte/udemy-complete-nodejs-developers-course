@@ -25,11 +25,18 @@ if (command === 'add') {
         console.log('Note title taken');
     }
 } else if (command === 'list') {
-    notes.getAll();
+
+    for(note in JSON.parse(notes.getAll())) {
+        console.log('--');
+        console.log(`Title: ${note.title}`);
+        console.log(`Body: ${note.body}`);
+    }
 } else if (command === 'read') {
     notes.getNote(argv.title);
 }  else if (command === 'remove') {
-    notes.removeNote(argv.title);
+    var isRemoved = notes.removeNote(argv.title);
+    var message = isRemoved ? "Note was removed" : "Note not found";
+    console.log(message)
 }  else {
     console.log('Command not recognized');
 }
